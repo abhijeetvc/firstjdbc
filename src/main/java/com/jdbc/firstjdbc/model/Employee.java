@@ -11,6 +11,7 @@ public class Employee {
     private String name;
     private String city;
 
+    private Department department;
 //    public Integer getId() {
 //        return id;
 //    }
