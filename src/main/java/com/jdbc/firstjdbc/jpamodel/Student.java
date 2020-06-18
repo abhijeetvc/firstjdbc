@@ -4,10 +4,8 @@ import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -21,4 +19,11 @@ public class Student {
      private String lastName;
      private String city;
      private String emailId;
+
+     @OneToMany(mappedBy = "student")
+     private Set<Address> addressSet;
 }
+
+// Implement OneToOne
+// Save student and address at the same time. Use single insert or save method
+// Fetch the student and its addresses based on the student id
